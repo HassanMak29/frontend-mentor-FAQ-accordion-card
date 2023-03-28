@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --font-size: 1.2rem;
+
+  /* Primary */
+  /**** text ****/
+  --verydarkdesaturatedblue: hsl(238, 29%, 16%);
+  --softred: hsl(14, 88%, 65%);
+
+  /**** Background Gradient ****/
+  --softviolet: hsl(273, 75%, 66%);
+  --softblue: hsl(240, 73%, 65%);
+
+  /* Neutral */
+  /**** Text ****/
+  --verydarkgrayishblue: hsl(237, 12%, 33%);
+  --darkgrayishblue: hsl(240, 6%, 50%);
+
+  /**** Dividers ****/
+  --lightgrayishblue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  position: relative;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  background-color: #fff;
+  width: 85rem;
+  max-width: 90rem;
+  border-radius: 2rem;
+  display: flex;
+  padding: 5rem 7rem;
+  position: relative;
+}
+
+.pattern {
+  flex: 1 1 0;
+}
+
+.pattern img {
+  position: absolute;
+}
+
+.overflow-hidden {
+  margin-left: -7rem;
+  height: 130%;
+  overflow: hidden;
+  position: relative;
+  margin-top: -5rem;
+}
+
+.bg-pattern-desktop {
+  width: 57rem;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.women-desktop {
+  width: 45rem;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.box-desktop {
+  width: 17rem;
+  top: 60%;
+  left: -11%;
+  transform: translateY(-50%);
+}
+
+.faq {
+  flex: 1 1 0;
+  margin-left: 4rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-container {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--lightgrayishblue);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--darkgrayishblue);
+  cursor: pointer;
+}
+
+.question:hover {
+  color: var(--softred);
+}
+
+.question.open {
+  color: var(--verydarkgrayishblue);
+}
+
+.accordion-arrow {
+  transition: all 0.5s ease-in-out;
+}
+
+.accordion-arrow.open {
+  transform: rotateX(180deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 1.3rem;
+  color: var(--darkgrayishblue);
+  transition: all 0.5s ease-in-out;
+}
+
+.answer p {
+  display: block;
+  margin-top: 1rem;
+  line-height: 1.5;
+  font-size: var(--font-size);
+}
+
+.answer.open {
+  max-height: 8rem;
+  opacity: 1;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--lightgrayishblue);
+  margin-bottom: 3rem;
+}
+
+.attribution a {
+  color: hsl(14, 70%, 76%);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.attribution a:hover {
+  color: hsl(15, 62%, 83%);
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 975px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 90%;
+    max-width: 40rem;
+    /* height: 70%; */
+    padding: 10rem 2rem 5rem 2rem;
+    margin-bottom: -7rem;
+  }
+
+  .pattern {
+    flex: 0;
+    margin-bottom: 5rem;
+  }
+
+  .faq {
+    margin-left: 0;
+  }
+
+  .overflow-hidden {
+    margin-left: 0;
+    overflow: visible;
+    position: static;
+    margin-top: 0;
+  }
+
+  .bg-pattern-mobile {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .women-mobile {
+    width: 24rem;
+    top: -11.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .box-mobile {
+    scale: 0.5;
+    top: -9.4rem;
+    left: 16%;
+    transform: translateX(-50%);
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 57%;
+  }
+
+  .pattern {
+    flex: 0;
+    margin-bottom: 3rem;
+  }
+
+  .box-mobile {
+    scale: 0.5;
+    top: -10rem;
+    left: 12%;
+    transform: translateX(-50%);
+  }
+}

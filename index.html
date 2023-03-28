@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="output.css" />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="pattern">
+          <div class="overflow-hidden">
+            <img
+              class="bg-pattern-desktop desktop"
+              src="/images/bg-pattern-desktop.svg"
+              alt="background pattern"
+              loading="lazy"
+            />
+            <img
+              class="bg-pattern-mobile mobile"
+              src="/images/bg-pattern-mobile.svg"
+              alt="background pattern"
+              loading="lazy"
+            />
+            <img
+              class="women-desktop desktop"
+              src="/images/illustration-woman-online-desktop.svg"
+              alt="women illustration"
+              loading="lazy"
+            />
+            <img
+              class="women-mobile mobile"
+              src="/images/illustration-woman-online-desktop.svg"
+              alt="women illustration"
+              loading="lazy"
+            />
+          </div>
+          <img
+            class="box-desktop desktop"
+            src="/images/illustration-box-desktop.svg"
+            alt="box illustration"
+            loading="lazy"
+          />
+          <img
+            class="box-mobile mobile"
+            src="/images/illustration-box-desktop.svg"
+            alt="box illustration"
+            loading="lazy"
+          />
+        </div>
+        <div class="faq">
+          <h1>FAQ</h1>
+          <div class="faq-container">
+            <div class="question-container">
+              <div class="question" onclick="openAccordion(this)">
+                <h2>How many team members can I invite?</h2>
+                <svg
+                  class="accordion-arrow"
+                  width="10"
+                  height="7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 .799l4 4 4-4"
+                    stroke="#F47B56"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="answer">
+                <p>
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </p>
+              </div>
+            </div>
+            <div class="question-container">
+              <div class="question" onclick="openAccordion(this)">
+                <h2>What is the maximum file upload size?</h2>
+                <svg
+                  class="accordion-arrow"
+                  width="10"
+                  height="7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 .799l4 4 4-4"
+                    stroke="#F47B56"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="answer">
+                <p>
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </p>
+              </div>
+            </div>
+            <div class="question-container">
+              <div class="question" onclick="openAccordion(this)">
+                <h2>How do I reset my password?</h2>
+                <svg
+                  class="accordion-arrow"
+                  width="10"
+                  height="7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 .799l4 4 4-4"
+                    stroke="#F47B56"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="answer">
+                <p>
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </p>
+              </div>
+            </div>
+            <div class="question-container">
+              <div class="question" onclick="openAccordion(this)">
+                <h2>Can I cancel my subscription?</h2>
+                <svg
+                  class="accordion-arrow"
+                  width="10"
+                  height="7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 .799l4 4 4-4"
+                    stroke="#F47B56"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+
+              <div class="answer">
+                <p>
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked.
+                </p>
+              </div>
+            </div>
+            <div class="question-container">
+              <div class="question" onclick="openAccordion(this)">
+                <h2>Do you provide additional support?</h2>
+                <svg
+                  class="accordion-arrow"
+                  width="10"
+                  height="7"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 .799l4 4 4-4"
+                    stroke="#F47B56"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="answer">
+                <p>
+                  Chat and email support is available 24/7. Phone lines are open
+                  during normal business hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by &nbsp;
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor </a
+      >. Coded by &nbsp;
+      <a href="https://www.makhloufi.me" target="_blank">Hassan A. Makhloufi</a
+      >.
+    </footer>
+
+    <script>
+      const openAccordion = (e) => {
+        e.classList.toggle("open");
+        e.parentNode.querySelector(".answer").classList.toggle("open");
+        e.parentNode.querySelector(".accordion-arrow").classList.toggle("open");
+        document.querySelectorAll(".question-container").forEach((element) => {
+          if (element.querySelector(".open") !== e) {
+            element.querySelector(".question").classList.remove("open");
+            element.querySelector(".answer").classList.remove("open");
+            element.querySelector(".accordion-arrow").classList.remove("open");
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
